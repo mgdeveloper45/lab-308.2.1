@@ -1,3 +1,5 @@
+/** 
+
 // Part 1: Growing Pains
 const PI = 3.1415;
 const radius = 5;
@@ -35,6 +37,19 @@ for(let j = 1; j <= 10; j++) {
 const requiredArea = additionalPlantCount * spacePerPlant;
 // console.log(requiredArea);
 const additionalSpace = requiredArea - area;
-console.log(`space needed after 10 weeks, ${additionalSpace}, square meters`);
+// console.log(`space needed after 10 weeks, ${additionalSpace}, square meters`);
 const expandedRadius = Math.sqrt(additionalSpace / PI + radius * radius);
-console.log(`new radius for garden, ${expandedRadius}, meters`);
+// console.log(`new radius for garden, ${expandedRadius}, meters`);
+
+**/
+
+// Part 3: Errors in Judgement
+const PI = 3.1415;
+const radius = 5;
+const area = PI * radius * radius;
+const spacePerPlant = 0.8;
+const initPlantCount = 20;
+const maxCapacity = Math.floor(area / spacePerPlant);
+let weeks = 10;
+
+let plantCount = initPlantCount;
