@@ -5,6 +5,8 @@ const area = PI * radius * radius;
 // console.log(area)
 const spacePerPlant = 0.8;
 const initPlantCount = 20;
-const maxCapacity = area / spacePerPlant;
+const maxCapacity = Math.floor(area / spacePerPlant);
 // console.log(maxCapacity)
-
+const fiftyPercentCapacity = maxCapacity * 0.5;
+const eightyPercentCapacity = maxCapacity * 0.8;
+console.log(fiftyPercentCapacity, eightyPercentCapacity)
