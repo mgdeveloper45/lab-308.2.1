@@ -14,5 +14,12 @@ let plantCount = initPlantCount;
 
 for(let i = 1; i <= 3; i++) {
     plantCount *= 2;
-    console.log(`week: ${i}, plant count: ${plantCount}`);
+    // console.log(`week: ${i}, plant count: ${plantCount}`);
+    if(plantCount > eightyPercentCapacity) {
+        console.log(`prune, plant count is greater than 80% of the maximum capacity of the garden`);
+    } else if(plantCount >= fiftyPercentCapacity) {
+        console.log(`monitor, plant count is between 50% and 80% of the maximum capacity of the garden`);
+    } else {
+        console.log(`plant, plant count is less than 50% of the maximum capacity of the garden`);
+    }
 }
