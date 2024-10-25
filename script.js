@@ -23,3 +23,10 @@ for(let i = 1; i <= 3; i++) {
         console.log(`plant, plant count is less than 50% of the maximum capacity of the garden`);
     }
 }
+
+// Part 2: Thinking Bigger
+let additionalPlantCount = 100;
+
+for(let j = 1; j <= 10; j++) {
+    additionalPlantCount *= 2;
+}
