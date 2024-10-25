@@ -29,4 +29,8 @@ let additionalPlantCount = 100;
 
 for(let j = 1; j <= 10; j++) {
     additionalPlantCount *= 2;
+    // console.log(additionalPlantCount)
 }
+
+const requiredArea = additionalPlantCount * spacePerPlant;
+console.log(requiredArea);
