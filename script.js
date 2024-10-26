@@ -28,31 +28,41 @@ try {
     }
 
     // Part 2: Thinking Bigger
-    let additionalPlantCount = 100;
+    const additionalPlantCount = 100;
+    const additionalWeeksSpace = 10;
+    let extendedPlantCount = additionalPlantCount;
 
-    for(let j = 1; j <= 10; j++) {
-        additionalPlantCount *= 2;
+    for(let j = 1; j <= additionalWeeksSpace; j++) {
+        extendedPlantCount *= 2;
         // console.log(additionalPlantCount)
     }
 
-    const requiredArea = additionalPlantCount * spacePerPlant;
+    const requiredArea = extendedPlantCount * spacePerPlant;
     // console.log(requiredArea);
-    const additionalSpace = requiredArea - area;
-    // console.log(`space needed after 10 weeks, ${additionalSpace}, square meters`);
-    const expandedRadius = Math.sqrt(additionalSpace / PI + radius * radius);
-    // console.log(`new radius for garden, ${expandedRadius}, meters`);
+    const expandedRadius = Math.sqrt(requiredArea / PI);
+    console.log(`Additional space required after ${additionalWeeksSpace} weeks with 100 starting plants: ${requiredArea.toFixed(2)} square meters`);
+    console.log(`Radius of expanded garden needed to fit all plants: ${expandedRadius.toFixed(2)} meters`);
 
 
     // Part 3: Errors in Judgement
     const initScientistPlantCount = 100;
     let scientistPlantCount = initScientistPlantCount;
 
-    for(let l = 1; l <=3; l++) {
+    for(let l = 1; l <= additionalWeeksSpace; l++) {
         scientistPlantCount *= 2;
     }
 
-        const requiredScientistSpace = scientistPlantCount * spacePerPlant;
-        console.log(requiredScientistSpace);
-    } catch (error) {
-        
+    const requiredScientistSpace = scientistPlantCount * spacePerPlant;
+    // console.log(requiredScientistSpace);
+    if(requiredScientistSpace > area) {
+        throw new Error(
+            `Error: Required space of ${requiredScientistSpace} square meters over space ${area} square meters.`
+        )
+    } else {
+        console.log(
+            `No error: Sufficient amout of space for ${scientistPlantCount} plants.`
+        )
     }
+} catch (error) {
+    console.error(error.message)
+}
